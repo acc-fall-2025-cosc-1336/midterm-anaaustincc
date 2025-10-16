@@ -4,6 +4,7 @@ import unittest
 #follow this example to add questions b, c, and d for testing including their functions
 from src.question_a.question_a import test_config, get_sum_of_evens
 from src.question_b.question_b import get_fahrenheit
+from src.question_c.question_c import is_prime
 
 class Test_Config(unittest.TestCase):
 
@@ -33,4 +34,16 @@ class Test_Question_B(unittest.TestCase):
     
     def test_get_fahrenheit_10(self):
         self.assertEqual(50, get_fahrenheit(10))
+
+
+class Test_Question_C(unittest.TestCase):
+
+    def test_is_prime_4(self):
+        self.assertEqual(False, is_prime(4))
+    
+    def test_is_prime_5(self):
+        self.assertEqual(True, is_prime(5))
+    
+    def test_is_prime_11(self):
+        self.assertEqual(True, is_prime(11))
 
