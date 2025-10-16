@@ -5,6 +5,7 @@ import unittest
 from src.question_a.question_a import test_config, get_sum_of_evens
 from src.question_b.question_b import get_fahrenheit
 from src.question_c.question_c import is_prime
+from src.question_d.question_d import get_assessment_value, get_tax_assessed
 
 class Test_Config(unittest.TestCase):
 
@@ -46,4 +47,14 @@ class Test_Question_C(unittest.TestCase):
     
     def test_is_prime_11(self):
         self.assertEqual(True, is_prime(11))
+
+class Test_Question_D(unittest.TestCase):
+
+    def test_get_assessment_value(self):
+        self.assertEqual(6000, get_assessment_value(10000))
+        self.assertEqual(12000, get_assessment_value(20000))
+
+    def test_get_tax_assessed(self):
+        self.assertAlmostEqual(43.2, get_tax_assessed(6000), places=2)
+        self.assertAlmostEqual(72.0, get_tax_assessed(10000), places=2)
 
