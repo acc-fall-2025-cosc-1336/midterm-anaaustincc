@@ -3,6 +3,7 @@ import unittest
 
 #follow this example to add questions b, c, and d for testing including their functions
 from src.question_a.question_a import test_config, get_sum_of_evens
+from src.question_b.question_b import get_fahrenheit
 
 class Test_Config(unittest.TestCase):
 
@@ -20,4 +21,16 @@ class Test_Question_A(unittest.TestCase):
     
     def test_get_sum_of_evens_8(self):
         self.assertEqual(20, get_sum_of_evens(8))
+
+
+class Test_Question_B(unittest.TestCase):
+
+    def test_get_fahrenheit_0(self):
+        self.assertEqual(32, get_fahrenheit(0))
+    
+    def test_get_fahrenheit_5(self):
+        self.assertEqual(41, get_fahrenheit(5))
+    
+    def test_get_fahrenheit_10(self):
+        self.assertEqual(50, get_fahrenheit(10))
 
